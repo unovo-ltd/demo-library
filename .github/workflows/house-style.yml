@@ -1,0 +1,21 @@
+# Fernhill's house style, checked on every proposal: no document is made live still saying TODO.
+name: House style
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  house-style:
+    name: House style
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No TODOs left in documents
+        run: |
+          if grep -rnw --include='*.md' 'TODO' . ; then
+            echo "::error::A document still says TODO. Finish it, or take the TODO out, before it goes live."
+            exit 1
+          fi
+          echo "No TODOs left."

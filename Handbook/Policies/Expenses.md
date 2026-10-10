@@ -18,3 +18,5 @@ We pay back what you spend on the studio's behalf, if it was agreed beforehand o
 3. You are paid with the next month's salary.
 
 Anything over £250 needs agreement from a director before you spend it.
+
+A line containing the word TODO. 
